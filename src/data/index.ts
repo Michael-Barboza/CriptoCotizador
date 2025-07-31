@@ -1,4 +1,4 @@
-import { Currency } from "../types";
+import type { Currency } from "../types";
 
 export const currencies: Currency[] = [
   { code: 'USD', name: 'Dólar de Estados Unidos' },
@@ -22,6 +22,5 @@ export const currencies: Currency[] = [
   { code: 'CLP', name: 'Peso Chileno' }, // Moneda de Chile
   { code: 'COP', name: 'Peso Colombiano' }, // Moneda de Colombia
   { code: 'PEN', name: 'Sol Peruano' }, // Moneda de Perú
-  { code: 'UYU', name: 'Peso Uruguayo' }, // Moneda de Uruguay
-  { code: 'VEF', name: 'Bolívar Venezolano' } // Moneda de Venezuela
+  
 ];

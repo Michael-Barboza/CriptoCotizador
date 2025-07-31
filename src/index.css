@@ -1,77 +1,177 @@
 :root {
   --white: #ffffff;
-  --primary: #61ecbc;
+  --primary: #61ECBC;
   --black: #182339;
+  --border-radius: 1rem;
+  --font-family: 'Outfit', sans-serif;
+  --font-size-base: 62.5%;
+  --transition-speed: 300ms;
 }
+
 html {
-  font-size: 62.5%;
+  font-size: var(--font-size-base);
 }
+
 body {
-  background-image: url("../public/fondo-02.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url('/public/fondo-02.jpg');
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
-  font-family: "Outfit", sans-serif;
-  font-size: 2rem
+  font-family: var(--font-family);
+  font-size: 2rem;
+  line-height: 1.6;
+  color: var(--black);
+
 }
+
+/* Centrado y limitación del contenedor */
 .container {
-  max-width: 60rem;
-  width: 95%;
+  max-width: 50rem;
+  width: 90%;
   margin: 0 auto;
-  
 }
-.app-title{
+
+/* Título principal */
+.app-title {
   text-align: center;
   font-size: 3.4rem;
-  color: var(--white);
   margin-top: 5rem;
-  margin-bottom: 2rem;
-  line-height: .8;
+  color: var(--white);
+  line-height: 1;
+  font-weight: 700;
 }
 .app-title span {
   display: block;
   color: var(--primary);
   font-size: 4rem;
+  font-weight: 900;
 }
+
+/* Sección de contenido */
 .content {
   margin-top: 5rem;
   padding: 2rem;
   background-color: var(--white);
-  border-radius: 1.5rem;
+  border-radius: var(--border-radius);
 }
 
-.form, 
+/* Formulario y campos */
+.form,
 .field {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.form label {
-  font-size: 1.6rem;
-  color: var(--black);
-}
-.form input {
-  padding: 1rem;
-  border-radius: 1rem;
-  font-size: 1.6rem;
 
-}
-select {
-  padding: 1rem;
-  border: none;
-  border-radius: 1rem;
+.form label {
+  color: var(--black);
+  font-weight: 600;
   font-size: 1.6rem;
+}
+
+/* Selects con estilos actualizados */
+.form select {
   background-color: #ecebeb;
-}
-.form input[type="submit"] {
-  margin-top: 2rem;
-  background-color: var(--primary);
   border: none;
-  color: var(--white);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  font-size: 1.3rem;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* Estado hover y focus en select */
+.form select:focus,
+.form select:hover {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(97, 236, 188, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Botón de submit con efectos y mejor accesibilidad */
+.form [type="submit"] {
+  background-color: var(--primary);
+  color: var(--black);
+  border: none;
+  padding: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  border-radius: var(--border-radius);
+  font-size: 1.8rem;
+  transition: background-color var(--transition-speed) ease, box-shadow 0.3s ease;
 }
-.form input[type="submit"]:hover {
-  background-color: #0cb387;
+.form [type="submit"]:hover,
+.form [type="submit"]:focus {
+  background-color: #0CB387;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  outline: none;
 }
+
+/* Resultados */
+.result-wrapper {
+  margin-top: 3rem;
+  border: solid 1px #0CB387;
+  border-radius: 2rem;
+  padding: 0 2rem;
+}
+.result-wrapper h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.result {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.result img {
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+}
+
+.result p {
+  margin: 2rem;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+.result span {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Estilos del footer */
+.footer {
+  margin-top: 10rem;
+  color: var(--white);
+  text-align: center;
+  background-color: transparent;
+}
+
+.footer a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
+
+
+
